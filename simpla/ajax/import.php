@@ -39,6 +39,9 @@ class ImportAjax extends Simpla
 
 	public function import()
 	{
+		if(!$this->managers->access('import'))
+			return false;
+
 		// Для корректной работы установим локаль UTF-8
 		setlocale(LC_ALL, 'ru_RU.UTF-8');
 		
